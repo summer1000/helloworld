@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.gecapital.jp/schema/ei/cdb/store" elementFormDefault="qualified" targetNamespace="http://www.gecapital.jp/schema/ei/cdb/store">
+    <xsd:complexType name="storeSearchInType">
+		<xsd:sequence>
+			<!-- 取引先種別 -->
+			<xsd:element minOccurs="0" name="search_acc_type" type="xsd:string"/>
+			<!-- とりまとめコード -->
+			<xsd:element minOccurs="0" name="arrangement_cd" type="xsd:string"/>
+			<!-- 取引先ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="acc_cd" type="xsd:string"/>
+			<!-- TDB企業番号 -->
+			<xsd:element minOccurs="0" name="tdb_cd" type="xsd:string"/>
+			<!-- 法人格ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="corporation_cd" type="xsd:string"/>
+			<!-- 法人格名称 -->
+			<xsd:element minOccurs="0" name="corporation_name" type="xsd:string"/>
+			<!-- 法人格前後区分 -->
+			<xsd:element minOccurs="0" name="ca_type" type="xsd:string"/>
+			<!-- 法人格前後区分漢字 -->
+			<xsd:element minOccurs="0" name="ca_type_name" type="xsd:string"/>
+			<!-- 取引先名(カナ） -->
+			<xsd:element minOccurs="0" name="acc_name_kana" type="xsd:string"/>
+			<!-- 取引先名漢字 -->
+			<xsd:element minOccurs="0" name="acc_name" type="xsd:string"/>
+			<!-- 取引先略称(カナ） -->
+			<xsd:element minOccurs="0" name="acc_short_name_kana" type="xsd:string"/>
+			<!-- 取引先名英語 -->
+			<xsd:element minOccurs="0" name="acc_english_name" type="xsd:string"/>
+			<!-- 事業所名カナ -->
+			<xsd:element minOccurs="0" name="location_kana" type="xsd:string"/>
+			<!-- 事業所名漢字 -->
+			<xsd:element minOccurs="0" name="location_name" type="xsd:string"/>
+			<!-- 郵便番号7桁 -->
+			<xsd:element minOccurs="0" name="zip" type="xsd:string"/>
+			<!-- 都県ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="pfts_cd" type="xsd:string"/>
+			<!-- 都県漢字 -->
+			<xsd:element minOccurs="0" name="pfts_name" type="xsd:string"/>
+			<!-- 都県カナ -->
+			<xsd:element minOccurs="0" name="pfts_name_kana" type="xsd:string"/>
+			<!-- 市区漢字 -->
+			<xsd:element minOccurs="0" name="city_name" type="xsd:string"/>
+			<!-- 市区カナ -->
+			<xsd:element minOccurs="0" name="city_name_kana" type="xsd:string"/>
+			<!-- 以下名カナ -->
+			<xsd:element minOccurs="0" name="street_address_kana" type="xsd:string"/>
+			<!-- 以下名漢字 -->
+			<xsd:element minOccurs="0" name="street_address" type="xsd:string"/>
+			<!-- 郵便番号1(登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="zip_diff" type="xsd:string"/>
+			<!-- 市町村 ｺｰﾄﾞ1    (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="municipality_cd_diff" type="xsd:string"/>
+			<!-- 都県漢字1 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="pfts_name_diff" type="xsd:string"/>
+			<!-- 都県カナ1 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="pfts_name_kana_diff" type="xsd:string"/>
+			<!-- 市区漢字1 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="city_name_diff" type="xsd:string"/>
+			<!-- 市区カナ1 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="city_name_kana_diff" type="xsd:string"/>
+			<!-- 以下名カナ1(登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="street_address_kana_diff" type="xsd:string"/>
+			<!-- 以下名漢字1(登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="street_address_diff" type="xsd:string"/>
+			<!-- 代表電話番号 -->
+			<xsd:element minOccurs="0" name="main_tel" type="xsd:string"/>
+			<!-- 取引先電話番号 -->
+			<xsd:element minOccurs="0" name="acc_tel" type="xsd:string"/>
+			<!-- 取引先FAX番号 -->
+			<xsd:element minOccurs="0" name="fax" type="xsd:string"/>
+			<!-- 法人個人判別フラグ -->
+			<xsd:element minOccurs="0" name="corporation_individual_type" type="xsd:string"/>
+			<!-- 担当部門部店 -->
+			<xsd:element minOccurs="0" name="contact_dept" type="xsd:string"/>
+			<!-- 担当部門部店名称 -->
+			<xsd:element minOccurs="0" name="contact_dept_name" type="xsd:string"/>
+			<!-- 当社営業担当者 -->
+			<xsd:element minOccurs="0" name="sales_employee" type="xsd:string"/>
+			<!-- 当社営業担当者名称 -->
+			<xsd:element minOccurs="0" name="sales_employee_name" type="xsd:string"/>
+			<!-- ISR部店 -->
+			<xsd:element minOccurs="0" name="isr_dept" type="xsd:string"/>
+			<!-- ISR部店名称 -->
+			<xsd:element minOccurs="0" name="isr_dept_name" type="xsd:string"/>
+			<!-- 当社ISR担当者 -->
+			<xsd:element minOccurs="0" name="isr_employee" type="xsd:string"/>
+			<!-- 当社ISR担当者名称 -->
+			<xsd:element minOccurs="0" name="isr_employee_name" type="xsd:string"/>
+			<!-- 代表者保証 -->
+			<xsd:element minOccurs="0" name="main_guarantee" type="xsd:string"/>
+			<!-- 代表者保証値 -->
+			<xsd:element minOccurs="0" name="main_guarantee_value" type="xsd:string"/>
+			<!-- 代表者カナ -->
+			<xsd:element minOccurs="0" name="main_kana" type="xsd:string"/>
+			<!-- 代表者氏名漢字 -->
+			<xsd:element minOccurs="0" name="main_name" type="xsd:string"/>
+			<!-- 代表者生年月日 -->
+			<xsd:element minOccurs="0" name="main_birth_date" type="xsd:string"/>
+			<!-- 代表者性別 -->
+			<xsd:element minOccurs="0" name="main_sex" type="xsd:string"/>
+			<!-- 代表者性別漢字 -->
+			<xsd:element minOccurs="0" name="main_sex_name" type="xsd:string"/>
+			<!-- 代表者住所市区町村CD -->
+			<xsd:element minOccurs="0" name="main_municipality_cd" type="xsd:string"/>
+			<!-- 代表者住所都県漢字 -->
+			<xsd:element minOccurs="0" name="main_pfts_name" type="xsd:string"/>
+			<!-- 代表者住所都県カナ -->
+			<xsd:element minOccurs="0" name="main_pfts_name_kana" type="xsd:string"/>
+			<!-- 代表者住所市区漢字 -->
+			<xsd:element minOccurs="0" name="main_city_name" type="xsd:string"/>
+			<!-- 代表者住所市区カナ -->
+			<xsd:element minOccurs="0" name="main_city_name_kana" type="xsd:string"/>
+			<!-- 代表者住所以下名カナ -->
+			<xsd:element minOccurs="0" name="main_street_address_kana" type="xsd:string"/>
+			<!-- 代表者住所以下名漢字 -->
+			<xsd:element minOccurs="0" name="main_street_address" type="xsd:string"/>
+			<!-- 代表者電話番号1 -->
+			<xsd:element minOccurs="0" name="main_tel1" type="xsd:string"/>
+			<!-- 代表者電話番号2 -->
+			<xsd:element minOccurs="0" name="main_tel2" type="xsd:string"/>
+			<!-- 代表者郵便番号 -->
+			<xsd:element minOccurs="0" name="main_zip" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+	<xsd:complexType name="storeSearchOutType">
+		<xsd:sequence>
+ 			<!-- とりまとめコード -->
+			<xsd:element minOccurs="0" name="arrangement_cd" type="xsd:string"/>
+ 			<!-- 取引先ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="acc_cd" type="xsd:string"/>
+ 			<!-- TDB企業番号 -->
+			<xsd:element minOccurs="0" name="tdb_cd" type="xsd:string"/>
+ 			<!-- 旧ストアコード -->
+			<xsd:element minOccurs="0" name="old_store_cd" type="xsd:string"/>
+ 			<!-- 旧ストアコード(本店) -->
+			<xsd:element minOccurs="0" name="old_head_store_cd" type="xsd:string"/>
+ 			<!-- 法人格ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="corporation_cd" type="xsd:string"/>
+ 			<!-- 法人格名称 -->
+			<xsd:element minOccurs="0" name="corporation_name" type="xsd:string"/>
+ 			<!-- 法人格前後区分 -->
+			<xsd:element minOccurs="0" name="ca_type" type="xsd:string"/>
+ 			<!-- 法人格前後区分漢字 -->
+			<xsd:element minOccurs="0" name="ca_type_name" type="xsd:string"/>
+ 			<!-- 取引先名(カナ） -->
+			<xsd:element minOccurs="0" name="acc_name_kana" type="xsd:string"/>
+ 			<!-- 取引先名漢字 -->
+			<xsd:element minOccurs="0" name="acc_name" type="xsd:string"/>
+ 			<!-- 取引先略称(カナ） -->
+			<xsd:element minOccurs="0" name="acc_short_name_kana" type="xsd:string"/>
+ 			<!-- 取引先名英語 -->
+			<xsd:element minOccurs="0" name="acc_english_name" type="xsd:string"/>
+ 			<!-- 事業所名カナ -->
+			<xsd:element minOccurs="0" name="location_kana" type="xsd:string"/>
+ 			<!-- 事業所名漢字 -->
+			<xsd:element minOccurs="0" name="location_name" type="xsd:string"/>
+ 			<!-- 登録部店コード -->
+			<xsd:element minOccurs="0" name="registration_dept_cd" type="xsd:string"/>
+ 			<!-- 登録部店漢名 -->
+			<xsd:element minOccurs="0" name="registration_dept_name" type="xsd:string"/>
+ 			<!-- 郵便番号7桁 -->
+			<xsd:element minOccurs="0" name="zip" type="xsd:string"/>
+ 			<!-- 市町村 ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="municipality_cd" type="xsd:string"/>
+ 			<!-- 都県漢字 -->
+			<xsd:element minOccurs="0" name="pfts_name" type="xsd:string"/>
+ 			<!-- 都県カナ -->
+			<xsd:element minOccurs="0" name="pfts_name_kana" type="xsd:string"/>
+ 			<!-- 市区漢字 -->
+			<xsd:element minOccurs="0" name="city_name" type="xsd:string"/>
+ 			<!-- 市区カナ -->
+			<xsd:element minOccurs="0" name="city_name_kana" type="xsd:string"/>
+ 			<!-- 以下名カナ -->
+			<xsd:element minOccurs="0" name="street_address_kana" type="xsd:string"/>
+ 			<!-- 以下名漢字 -->
+			<xsd:element minOccurs="0" name="street_address" type="xsd:string"/>
+ 			<!-- 登記上と実質本店住所が同一 -->
+			<xsd:element minOccurs="0" name="address_type" type="xsd:string"/>
+ 			<!-- 郵便番号1(登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="zip_diff" type="xsd:string"/>
+ 			<!-- 市町村 ｺｰﾄﾞ1    (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="municipality_cd_diff" type="xsd:string"/>
+ 			<!-- 都県漢字　 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="pfts_name_diff" type="xsd:string"/>
+ 			<!-- 都県カナ　 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="pfts_name_kana_diff" type="xsd:string"/>
+ 			<!-- 市区漢字　 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="city_name_diff" type="xsd:string"/>
+ 			<!-- 市区カナ　 (登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="city_name_kana_diff" type="xsd:string"/>
+ 			<!-- 以下名カナ1(登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="street_address_kana_diff" type="xsd:string"/>
+ 			<!-- 以下名漢字1(登記上と実質本店住所が 違い時) -->
+			<xsd:element minOccurs="0" name="street_address_diff" type="xsd:string"/>
+ 			<!-- 代表電話番号 -->
+			<xsd:element minOccurs="0" name="main_tel" type="xsd:string"/>
+ 			<!-- 取引先電話番号 -->
+			<xsd:element minOccurs="0" name="acc_tel" type="xsd:string"/>
+ 			<!-- 取引先FAX番号 -->
+			<xsd:element minOccurs="0" name="fax" type="xsd:string"/>
+ 			<!-- FAX連絡区分 -->
+			<xsd:element minOccurs="0" name="fax_type" type="xsd:string"/>
+ 			<!-- FAX連絡区分値 -->
+			<xsd:element minOccurs="0" name="fax_type_value" type="xsd:string"/>
+ 			<!-- 法人個人判別フラグ -->
+			<xsd:element minOccurs="0" name="corporation_individual_type" type="xsd:string"/>
+ 			<!-- 資本金区分 -->
+			<xsd:element minOccurs="0" name="capital_type" type="xsd:string"/>
+ 			<!-- 資本金区分漢字 -->
+			<xsd:element minOccurs="0" name="capital_type_name" type="xsd:string"/>
+ 			<!-- 代表業種ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="main_Industry_type_cd" type="xsd:string"/>
+ 			<!-- 代表業種小漢名 -->
+			<xsd:element minOccurs="0" name="main_Industry_type_name" type="xsd:string"/>
+ 			<!-- 設立年月 -->
+			<xsd:element minOccurs="0" name="founded_ym" type="xsd:string"/>
+ 			<!-- 従業員数 -->
+			<xsd:element minOccurs="0" name="employee_quantity" type="xsd:long"/>
+ 			<!-- 年商 -->
+			<xsd:element minOccurs="0" name="annual_sales" type="xsd:long"/>
+ 			<!-- URL -->
+			<xsd:element minOccurs="0" name="url" type="xsd:string"/>
+ 			<!-- Collection　I/F済サイン -->
+			<xsd:element minOccurs="0" name="collection_if_finished_sn" type="xsd:string"/>
+ 			<!-- 引合経路コード -->
+			<xsd:element minOccurs="0" name="inquiry_channel_cd" type="xsd:string"/>
+ 			<!-- 担当部門部店 -->
+			<xsd:element minOccurs="0" name="contact_dept" type="xsd:string"/>
+ 			<!-- 担当部門部店名称 -->
+			<xsd:element minOccurs="0" name="contact_dept_name" type="xsd:string"/>
+ 			<!-- 当社営業担当者 -->
+			<xsd:element minOccurs="0" name="sales_employee" type="xsd:string"/>
+ 			<!-- 当社営業担当者名称 -->
+			<xsd:element minOccurs="0" name="sales_employee_name" type="xsd:string"/>
+ 			<!-- ISR部店 -->
+			<xsd:element minOccurs="0" name="isr_dept" type="xsd:string"/>
+ 			<!-- ISR部店名称 -->
+			<xsd:element minOccurs="0" name="isr_dept_name" type="xsd:string"/>
+ 			<!-- 当社ISR担当者 -->
+			<xsd:element minOccurs="0" name="isr_employee" type="xsd:string"/>
+ 			<!-- 当社ISR担当者名称 -->
+			<xsd:element minOccurs="0" name="isr_employee_name" type="xsd:string"/>
+ 			<!-- ルート -->
+			<xsd:element minOccurs="0" name="root" type="xsd:string"/>
+ 			<!-- ルート漢字 -->
+			<xsd:element minOccurs="0" name="root_name" type="xsd:string"/>
+ 			<!-- チャネル -->
+			<xsd:element minOccurs="0" name="channel" type="xsd:string"/>
+ 			<!-- チャネル漢字 -->
+			<xsd:element minOccurs="0" name="channel_name" type="xsd:string"/>
+ 			<!-- ランク -->
+			<xsd:element minOccurs="0" name="store_flg" type="xsd:string"/>
+ 			<!-- 取引先取引区分 -->
+			<xsd:element minOccurs="0" name="acc_trade_type" type="xsd:string"/>
+ 			<!-- 取引先取引区分漢字 -->
+			<xsd:element minOccurs="0" name="acc_trade_type_name" type="xsd:string"/>
+ 			<!-- 最新覚書締結日 -->
+			<xsd:element minOccurs="0" name="latest_memo_conclusion_date" type="xsd:string"/>
+ 			<!-- 取引開始日 -->
+			<xsd:element minOccurs="0" name="trade_start_date" type="xsd:string"/>
+ 			<!-- 取引停止日 -->
+			<xsd:element minOccurs="0" name="trade_end_date" type="xsd:string"/>
+ 			<!-- 取引停止理由 -->
+			<xsd:element minOccurs="0" name="trade_end_reason" type="xsd:string"/>
+ 			<!-- 取引停止理由漢字 -->
+			<xsd:element minOccurs="0" name="trade_end_reason_name" type="xsd:string"/>
+ 			<!-- 審査注意事項 -->
+			<xsd:element minOccurs="0" name="judg_imp_item" type="xsd:string"/>
+ 			<!-- 継続管理事項 -->
+			<xsd:element minOccurs="0" name="continue_mng_item" type="xsd:string"/>
+ 			<!-- 取引見直日 -->
+			<xsd:element minOccurs="0" name="trade_revision" type="xsd:string"/>
+ 			<!-- 債権残高 -->
+			<xsd:element minOccurs="0" name="claims_balance" type="xsd:long"/>
+ 			<!-- 残高保証枠 -->
+			<xsd:element minOccurs="0" name="balance_pledge_range" type="xsd:long"/>
+ 			<!-- TG -->
+			<xsd:element minOccurs="0" name="tg" type="xsd:long"/>
+ 			<!-- 見直指示事項 -->
+			<xsd:element minOccurs="0" name="revision_instruction" type="xsd:string"/>
+ 			<!-- 取扱可能書式1 -->
+			<xsd:element minOccurs="0" name="handling_format1" type="xsd:string"/>
+ 			<!-- 取扱可能書式2 -->
+			<xsd:element minOccurs="0" name="handling_format2" type="xsd:string"/>
+ 			<!-- 取扱可能書式3 -->
+			<xsd:element minOccurs="0" name="handling_format3" type="xsd:string"/>
+ 			<!-- 取扱可能書式4 -->
+			<xsd:element minOccurs="0" name="handling_format4" type="xsd:string"/>
+ 			<!-- 取扱可能書式5 -->
+			<xsd:element minOccurs="0" name="handling_format5" type="xsd:string"/>
+ 			<!-- 取扱可能書式6 -->
+			<xsd:element minOccurs="0" name="handling_format6" type="xsd:string"/>
+ 			<!-- 取扱可能書式7 -->
+			<xsd:element minOccurs="0" name="handling_format7" type="xsd:string"/>
+ 			<!-- 取扱可能書式8 -->
+			<xsd:element minOccurs="0" name="handling_format8" type="xsd:string"/>
+ 			<!-- 取扱可能書式9 -->
+			<xsd:element minOccurs="0" name="handling_format9" type="xsd:string"/>
+ 			<!-- 取扱可能書式10 -->
+			<xsd:element minOccurs="0" name="handling_format10" type="xsd:string"/>
+ 			<!-- 割賦販売法対象 -->
+			<xsd:element minOccurs="0" name="installment_object" type="xsd:string"/>
+ 			<!-- 割賦販売法対象値 -->
+			<xsd:element minOccurs="0" name="installment_object_value" type="xsd:string"/>
+ 			<!-- SECOND -->
+			<xsd:element minOccurs="0" name="second" type="xsd:string"/>
+ 			<!-- SECOND値 -->
+			<xsd:element minOccurs="0" name="second_value" type="xsd:string"/>
+ 			<!-- SECOND停止日 -->
+			<xsd:element minOccurs="0" name="second_end_date" type="xsd:string"/>
+ 			<!-- 電話 -->
+			<xsd:element minOccurs="0" name="tel" type="xsd:string"/>
+ 			<!-- 電話値 -->
+			<xsd:element minOccurs="0" name="tel_name" type="xsd:string"/>
+ 			<!-- DM送付 -->
+			<xsd:element minOccurs="0" name="dm_sending" type="xsd:string"/>
+ 			<!-- DM送付値 -->
+			<xsd:element minOccurs="0" name="dm_sending_value" type="xsd:string"/>
+ 			<!-- テレマ架電 -->
+			<xsd:element minOccurs="0" name="telemarketing" type="xsd:string"/>
+ 			<!-- テレマ架電値 -->
+			<xsd:element minOccurs="0" name="telemarketing_value" type="xsd:string"/>
+ 			<!-- 提示済フラグ -->
+			<xsd:element minOccurs="0" name="presentation_flag" type="xsd:string"/>
+ 			<!-- 直近提示日 -->
+			<xsd:element minOccurs="0" name="nearest_presentation_day" type="xsd:string"/>
+ 			<!-- 提示レート適用日 -->
+			<xsd:element minOccurs="0" name="presentation_rate_day" type="xsd:string"/>
+ 			<!-- 支払条件№1 -->
+			<xsd:element minOccurs="0" name="pay_condition_no_1" type="xsd:string"/>
+ 			<!-- 支払条件適用日1 -->
+			<xsd:element minOccurs="0" name="pay_condition_app_date_1" type="xsd:string"/>
+ 			<!-- 支払方法コード1 -->
+			<xsd:element minOccurs="0" name="pay_method_cd_1" type="xsd:string"/>
+ 			<!-- 支払方法1 -->
+			<xsd:element minOccurs="0" name="pay_method_1" type="xsd:string"/>
+ 			<!-- 支払条件№2 -->
+			<xsd:element minOccurs="0" name="pay_condition_no_2" type="xsd:string"/>
+ 			<!-- 支払条件適用日2 -->
+			<xsd:element minOccurs="0" name="pay_condition_app_date_2" type="xsd:string"/>
+ 			<!-- 支払方法コード2 -->
+			<xsd:element minOccurs="0" name="pay_method_cd_2" type="xsd:string"/>
+ 			<!-- 支払方法2 -->
+			<xsd:element minOccurs="0" name="pay_method_2" type="xsd:string"/>
+ 			<!-- 支払条件№3 -->
+			<xsd:element minOccurs="0" name="pay_condition_no_3" type="xsd:string"/>
+ 			<!-- 支払条件適用日3 -->
+			<xsd:element minOccurs="0" name="pay_condition_app_date_3" type="xsd:string"/>
+ 			<!-- 支払方法コード3 -->
+			<xsd:element minOccurs="0" name="pay_method_cd_3" type="xsd:string"/>
+ 			<!-- 支払方法3 -->
+			<xsd:element minOccurs="0" name="pay_method_3" type="xsd:string"/>
+ 			<!-- 代表者保証 -->
+			<xsd:element minOccurs="0" name="main_guarantee" type="xsd:string"/>
+ 			<!-- 代表者保証値 -->
+			<xsd:element minOccurs="0" name="main_guarantee_value" type="xsd:string"/>
+ 			<!-- 代表者カナ -->
+			<xsd:element minOccurs="0" name="main_kana" type="xsd:string"/>
+ 			<!-- 代表者氏名漢字 -->
+			<xsd:element minOccurs="0" name="main_name" type="xsd:string"/>
+ 			<!-- 代表者生年月日 -->
+			<xsd:element minOccurs="0" name="main_birth_date" type="xsd:string"/>
+ 			<!-- 代表者性別 -->
+			<xsd:element minOccurs="0" name="main_sex" type="xsd:string"/>
+ 			<!-- 代表者性別漢字 -->
+			<xsd:element minOccurs="0" name="main_sex_name" type="xsd:string"/>
+ 			<!-- 代表者住所市区町村CD -->
+			<xsd:element minOccurs="0" name="main_municipality_cd" type="xsd:string"/>
+ 			<!-- 代表者住所都県漢字 -->
+			<xsd:element minOccurs="0" name="main_pfts_name" type="xsd:string"/>
+ 			<!-- 代表者住所都県カナ -->
+			<xsd:element minOccurs="0" name="main_pfts_name_kana" type="xsd:string"/>
+ 			<!-- 代表者住所市区漢字 -->
+			<xsd:element minOccurs="0" name="main_city_name" type="xsd:string"/>
+ 			<!-- 代表者住所市区カナ -->
+			<xsd:element minOccurs="0" name="main_city_name_kana" type="xsd:string"/>
+ 			<!-- 代表者住所以下名カナ -->
+			<xsd:element minOccurs="0" name="main_street_address_kana" type="xsd:string"/>
+ 			<!-- 代表者住所以下名漢字 -->
+			<xsd:element minOccurs="0" name="main_street_address" type="xsd:string"/>
+ 			<!-- 代表者電話番号1 -->
+			<xsd:element minOccurs="0" name="main_tel1" type="xsd:string"/>
+ 			<!-- 代表者電話番号2 -->
+			<xsd:element minOccurs="0" name="main_tel2" type="xsd:string"/>
+ 			<!-- 代表者郵便番号 -->
+			<xsd:element minOccurs="0" name="main_zip" type="xsd:string"/>
+ 			<!-- 備考 -->
+			<xsd:element minOccurs="0" name="comment" type="xsd:string"/>
+ 			<!-- 買取支払先コード -->
+			<xsd:element minOccurs="0" name="purchase_payee_cd" type="xsd:string"/>
+ 			<!-- 買取支払先取引先漢字 -->
+			<xsd:element minOccurs="0" name="purchase_payee_acc_name" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（銀行) -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_bank" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（銀行)本店名 -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_bank_name" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（支店) -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_sub_store" type="xsd:string"/>
+ 			<!-- 決裁銀行口座支店名 -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_sub_store_name" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（種別) -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_type" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（種別)漢字 -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_type_name" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（口座番号) -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_cd" type="xsd:string"/>
+ 			<!-- 決裁銀行口座（口座名義人) -->
+			<xsd:element minOccurs="0" name="apv_bank_acc_owner" type="xsd:string"/>
+ 			<!-- 振込手数料 -->
+			<xsd:element minOccurs="0" name="remittance_fee" type="xsd:long"/>
+ 			<!-- ANSER略番 -->
+			<xsd:element minOccurs="0" name="anser_short_cd" type="xsd:string"/>
+ 			<!-- 管理債権サイン -->
+			<xsd:element minOccurs="0" name="admin_sn" type="xsd:string"/>
+ 			<!-- 管理債権サイン（漢字） -->
+			<xsd:element minOccurs="0" name="admin_sn_name" type="xsd:string"/>
+ 			<!-- 管理債権状態区分 -->
+			<xsd:element minOccurs="0" name="admin_status_type" type="xsd:string"/>
+ 			<!-- 管理債権状態区分（漢字） -->
+			<xsd:element minOccurs="0" name="admin_status_type_name" type="xsd:string"/>
+ 			<!-- 事故発生年月日 -->
+			<xsd:element minOccurs="0" name="accident_generate_date" type="xsd:string"/>
+ 			<!-- 事故終結年月日 -->
+			<xsd:element minOccurs="0" name="accident_end_date" type="xsd:string"/>
+ 			<!-- 事故終結コード -->
+			<xsd:element minOccurs="0" name="accident_end_cd" type="xsd:string"/>			
+ 			<!-- レコードバージョン -->
+			<xsd:element minOccurs="0" name="record_version" type="xsd:int"/>
+ 			<!-- 検索結果区分 -->
+			<xsd:element minOccurs="0" name="search_ret_type" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="storeSearchReqType">
+        <xsd:sequence>
+			<!-- 区分 -->
+			<xsd:element minOccurs="0" name="flg" type="xsd:string"/>
+			
+            <xsd:element maxOccurs="1" minOccurs="1" name="storeSearchIn" type="tns:storeSearchInType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="storeSearchResType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="storeSearchOut" type="tns:storeSearchOutType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+	<xsd:element name="storeSearch" type="tns:storeSearchReqType"/>
+	<xsd:element name="storeSearchRes" type="tns:storeSearchResType"/>
+</xsd:schema>

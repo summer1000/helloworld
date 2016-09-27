@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.gecapital.jp/schema/ei/cdb/store" elementFormDefault="qualified" targetNamespace="http://www.gecapital.jp/schema/ei/cdb/store">
+    <xsd:complexType name="storePresRateInqInType">
+		<xsd:sequence>
+			<!-- 取引先ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="acc_cd" type="xsd:string"/>
+			<!-- 商品区分ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="product_type_cd" type="xsd:string"/>
+			<!-- 申込日 -->
+			<xsd:element minOccurs="0" name="app_date" type="xsd:string"/>
+			<!-- 回数 -->
+			<xsd:element minOccurs="0" name="frequency" type="xsd:string"/>
+			<!-- ACD関連のCSM対応 wanglin(DHC) 20111103 Update Start -->
+ 			<!-- 与信ランク -->
+			<xsd:element minOccurs="0" name="credit_rank" type="xsd:string"/>
+			<!-- ACD関連のCSM対応 wanglin(DHC) 20111103 Update End -->
+        </xsd:sequence>
+    </xsd:complexType>
+    
+	<xsd:complexType name="storePresRateInqOutType">
+		<xsd:sequence>
+ 			<!-- 取引先ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="acc_cd" type="xsd:string"/>
+ 			<!-- 商品区分 -->
+			<xsd:element minOccurs="0" name="product_type" type="xsd:string"/>
+ 			<!-- 申込日 -->
+			<xsd:element minOccurs="0" name="app_date" type="xsd:string"/>
+ 			<!-- ルート -->
+			<xsd:element minOccurs="0" name="root" type="xsd:string"/>
+ 			<!-- ルート漢字 -->
+			<xsd:element minOccurs="0" name="root_name" type="xsd:string"/>
+ 			<!-- ランク -->
+			<xsd:element minOccurs="0" name="rank" type="xsd:string"/>
+ 			<!-- 提示料率適用開始日 -->
+			<xsd:element minOccurs="0" name="presentation_rate_appday" type="xsd:string"/>
+ 			<!-- 提示日 -->
+			<xsd:element minOccurs="0" name="presentation_day" type="xsd:string"/>
+ 			<!-- 計算した回数 -->
+			<xsd:element minOccurs="0" name="frequency" type="xsd:string"/>
+ 			<!-- 提示レート -->
+			<xsd:element minOccurs="0" name="operation_fee_rate" type="xsd:double"/>
+			<!-- ACD関連のCSM対応 wanglin(DHC) 20111103 Update Start -->
+ 			<!-- 与信ランク-->
+			<xsd:element minOccurs="0" name="credit_rank" type="xsd:string"/>
+			<!-- ACD関連のCSM対応 wanglin(DHC) 20111103 Update End -->
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="storePresRateInqReqType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="storePresRateInqIn" type="tns:storePresRateInqInType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="storePresRateInqResType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="storePresRateInqOut" type="tns:storePresRateInqOutType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+	<xsd:element name="storePresRateInq" type="tns:storePresRateInqReqType"/>
+	<xsd:element name="storePresRateInqRes" type="tns:storePresRateInqResType"/>
+</xsd:schema>

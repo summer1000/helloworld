@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.gecapital.jp/schema/ei/cdb/store" elementFormDefault="qualified" targetNamespace="http://www.gecapital.jp/schema/ei/cdb/store">
+    <xsd:complexType name="storePerfSearchInType">
+		<xsd:sequence>
+			<!-- 取引先ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="acc_cd" type="xsd:string"/>
+			<!-- コンピュータ判定月 -->
+			<xsd:element minOccurs="0" name="computer_approval_month" type="xsd:string"/>
+			<!-- コンピュータ判定月の前月分月数 -->
+			<xsd:element minOccurs="0" name="month_number" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+	<xsd:complexType name="storePerfSearchOutType">
+		<xsd:sequence>
+ 			<!-- 取引先ｺｰﾄﾞ -->
+			<xsd:element minOccurs="0" name="acc_cd" type="xsd:string"/>
+ 			<!-- 取引開始日 -->
+			<xsd:element minOccurs="0" name="trade_start_date" type="xsd:string"/>
+ 			<!-- 表示対象年月 -->
+			<xsd:element minOccurs="0" name="target_ym" type="xsd:string"/>
+ 			<!-- 申込件数 -->
+			<xsd:element minOccurs="0" name="app_count" type="xsd:int"/>
+ 			<!-- 承認件数 -->
+			<xsd:element minOccurs="0" name="approval_count" type="xsd:int"/>
+ 			<!-- 承認率 -->
+			<xsd:element minOccurs="0" name="approval_rate" type="xsd:double"/>
+ 			<!-- 否決件数 -->
+			<xsd:element minOccurs="0" name="rejection_count" type="xsd:int"/>
+ 			<!-- 否決率 -->
+			<xsd:element minOccurs="0" name="rejection_rate" type="xsd:double"/>
+ 			<!-- 当月内検収件数 -->
+			<xsd:element minOccurs="0" name="this_md_count" type="xsd:int"/>
+ 			<!-- 翌月検収件数　 -->
+			<xsd:element minOccurs="0" name="next_md_count" type="xsd:int"/>
+ 			<!-- 翌々月検収件数 -->
+			<xsd:element minOccurs="0" name="tman_delivery_count" type="xsd:int"/>
+ 			<!-- ～翌々月検収件数 -->
+			<xsd:element minOccurs="0" name="until_tman_delivery_count" type="xsd:int"/>
+ 			<!-- 当月検収率 -->
+			<xsd:element minOccurs="0" name="this_month_deliver_rate" type="xsd:double"/>
+ 			<!-- 翌月検収率 -->
+			<xsd:element minOccurs="0" name="next_month_deliver_rate" type="xsd:double"/>
+ 			<!-- 翌々月検収率 -->
+			<xsd:element minOccurs="0" name="tman_delivery_rate" type="xsd:double"/>
+ 			<!-- ～翌々月検収率 -->
+			<xsd:element minOccurs="0" name="until_tman_rate" type="xsd:double"/>
+ 			<!-- 検収件数 -->
+			<xsd:element minOccurs="0" name="deliver_count" type="xsd:int"/>
+ 			<!-- 検収金額 -->
+			<xsd:element minOccurs="0" name="deliver_amount" type="xsd:long"/>
+ 			<!-- 平均単価 -->
+			<xsd:element minOccurs="0" name="average_price" type="xsd:long"/>
+ 			<!-- 前年比 -->
+			<xsd:element minOccurs="0" name="year_on_year_rate" type="xsd:double"/>
+ 			<!-- 債権数 -->
+			<xsd:element minOccurs="0" name="claims_count" type="xsd:int"/>
+ 			<!-- 債権残高 -->
+			<xsd:element minOccurs="0" name="claims_balance" type="xsd:long"/>
+ 			<!-- 回収率/新債 -->
+			<xsd:element minOccurs="0" name="recovery_percentage_new" type="xsd:double"/>
+ 			<!-- 回収率/総合 -->
+			<xsd:element minOccurs="0" name="recovery_percentage_total" type="xsd:double"/>
+ 			<!-- 口振不能率 -->
+			<xsd:element minOccurs="0" name="not_acc_transfer_rate" type="xsd:double"/>
+ 			<!-- 遅延件数 -->
+			<xsd:element minOccurs="0" name="delay_count" type="xsd:int"/>
+ 			<!-- 遅延債権残高(旧問題債権残高) -->
+			<xsd:element minOccurs="0" name="delay_claims_balance" type="xsd:long"/>
+ 			<!-- 遅延債権金額比率 -->
+			<xsd:element minOccurs="0" name="delay_claims_amount_percentage" type="xsd:double"/>
+ 			<!-- 債権状態区分別該当件数（８９～９８） -->
+			<xsd:element minOccurs="0" name="claims_type_count1" type="xsd:int"/>
+ 			<!-- 債権状態区分別該当債権残高（８９～９８） -->
+			<xsd:element minOccurs="0" name="claims_type_count2" type="xsd:long"/>
+ 			<!-- 残価件数 -->
+			<xsd:element minOccurs="0" name="residual_value_count" type="xsd:int"/>
+ 			<!-- 残価残高 -->
+			<xsd:element minOccurs="0" name="residual_value_outstanding_balance" type="xsd:long"/>
+ 			<!-- 口振件数 -->
+			<xsd:element minOccurs="0" name="acc_transfer_count" type="xsd:int"/>
+ 			<!-- 口振不能件数 -->
+			<xsd:element minOccurs="0" name="not_acc_transfer_count" type="xsd:int"/>
+ 			<!-- 新債回収金額 -->
+			<xsd:element minOccurs="0" name="new_collected_amount" type="xsd:long"/>
+ 			<!-- 新債回収予定金額 -->
+			<xsd:element minOccurs="0" name="new_collecting_amount" type="xsd:long"/>
+ 			<!-- 総合回収金額 -->
+			<xsd:element minOccurs="0" name="total_collected_amount" type="xsd:long"/>
+ 			<!-- 総合回収予定金額 -->
+			<xsd:element minOccurs="0" name="total_collecting_amount" type="xsd:long"/>
+ 			<!-- 前年度検収金額 -->
+			<xsd:element minOccurs="0" name="previous_year_amount" type="xsd:long"/>
+ 			<!-- 当月検収契約額 -->
+			<xsd:element minOccurs="0" name="this_md_contract_amount" type="xsd:long"/>
+ 			<!-- 遡り６ヶ月検収契約額 -->
+			<xsd:element minOccurs="0" name="last_6_md_contract_amount" type="xsd:long"/>
+ 			<!-- 直近１年間検収契約額 -->
+			<xsd:element minOccurs="0" name="last_12_md_contract_amount" type="xsd:long"/>
+ 			<!-- 直近６ヶ月の検収件数 -->
+			<xsd:element minOccurs="0" name="last_6_md_count" type="xsd:int"/>
+ 			<!-- 直近２年間検収件数 -->
+			<xsd:element minOccurs="0" name="last_24_md_count" type="xsd:int"/>
+ 			<!-- 非法人契約２年間検収件数 -->
+			<xsd:element minOccurs="0" name="unincorporate_last_24_md_count" type="xsd:int"/>
+ 			<!-- 高齢者契約２年間検収件数 -->
+			<xsd:element minOccurs="0" name="elderly_last_24_md_count" type="xsd:int"/>
+ 			<!-- 帝国DB評点差 -->
+			<xsd:element minOccurs="0" name="tdb_db_score_difference" type="xsd:int"/>
+ 			<!-- 帝国DB評点 -->
+			<xsd:element minOccurs="0" name="tdb_db_score" type="xsd:int"/>
+ 			<!-- 帝国DB年商 -->
+			<xsd:element minOccurs="0" name="tdb_db_annual_sales" type="xsd:long"/>
+ 			<!-- 複数契約件数 -->
+			<xsd:element minOccurs="0" name="multi_contract_count" type="xsd:int"/>
+ 			<!-- 特定価格帯契約件数２５０-３００ -->
+			<xsd:element minOccurs="0" name="specific_contract_count1" type="xsd:int"/>
+ 			<!-- 特定価格帯契約件数３００未満 -->
+			<xsd:element minOccurs="0" name="specific_contract_count2" type="xsd:int"/>
+ 			<!-- ソフトウエア取扱件数 -->
+			<xsd:element minOccurs="0" name="software_handle_count" type="xsd:int"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="storePerfSearchReqType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="storePerfSearchIn" type="tns:storePerfSearchInType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="storePerfSearchResType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="storePerfSearchOut" type="tns:storePerfSearchOutType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+	<xsd:element name="storePerfSearch" type="tns:storePerfSearchReqType"/>
+	<xsd:element name="storePerfSearchRes" type="tns:storePerfSearchResType"/>
+</xsd:schema>

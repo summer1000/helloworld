@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+Copyright (c) 2010 GE Capital
+--><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:fault="http://www.gecapital.jp/schema/ei/EIWSException" xmlns:ns="http://www.gecapital.jp/schema/ei/cdb/store" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.gecapital.jp/wsdl/ei/cdb/storeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="StoreService" targetNamespace="http://www.gecapital.jp/wsdl/ei/cdb/storeService">
+    <types>
+        <xsd:schema targetNamespace="http://www.gecapital.jp/wsdl/ei/cdb/storeService">
+            <xsd:import namespace="http://www.gecapital.jp/schema/ei/cdb/store" schemaLocation="schema/StoreInq.xsd"/>
+            <xsd:import namespace="http://www.gecapital.jp/schema/ei/cdb/store" schemaLocation="schema/StoreOperRatesSeach.xsd"/>
+            <xsd:import namespace="http://www.gecapital.jp/schema/ei/cdb/store" schemaLocation="schema/StorePerfSearch.xsd"/>
+            <xsd:import namespace="http://www.gecapital.jp/schema/ei/cdb/store" schemaLocation="schema/StoreSearch.xsd"/>
+            <xsd:import namespace="http://www.gecapital.jp/schema/ei/cdb/store" schemaLocation="schema/StorePresRateInq.xsd"/>
+            <xsd:import namespace="http://www.gecapital.jp/schema/ei/EIWSException" schemaLocation="schema/common/EIWSException.xsd"/>
+        </xsd:schema>
+    </types>
+
+    <!--  - - - - - - - - -->
+    <!--  fault messages  -->
+    <!--  - - - - - - - - -->
+    <message name="EIWSException">
+        <part element="fault:EIWSException" name="fault"/>
+    </message>
+    <!--  - - - - - - - - - - -->
+    <!--  Operations messages -->
+    <!--  - - - - - - - - - - -->
+
+    <message name="storeInqSoapIn">
+        <part element="ns:storeInq" name="parameters"/>
+    </message>
+    <message name="storeInqSoapOut">
+        <part element="ns:storeInqRes" name="parameters"/>
+    </message>
+
+    <message name="storeSearchSoapIn">
+        <part element="ns:storeSearch" name="parameters"/>
+    </message>
+    <message name="storeSearchSoapOut">
+        <part element="ns:storeSearchRes" name="parameters"/>
+    </message>
+
+    <message name="storeOperRatesSeachSoapIn">
+        <part element="ns:storeOperRatesSearch" name="parameters"/>
+    </message>
+    <message name="storeOperRatesSeachSoapOut">
+        <part element="ns:storeOperRatesSearchRes" name="parameters"/>
+    </message>
+
+    <message name="storePerfSearchSoapIn">
+        <part element="ns:storePerfSearch" name="parameters"/>
+    </message>
+    <message name="storePerfSearchSoapOut">
+        <part element="ns:storePerfSearchRes" name="parameters"/>
+    </message>
+
+    <message name="storePresRateInqSoapIn">
+        <part element="ns:storePresRateInq" name="parameters"/>
+    </message>
+    <message name="storePresRateInqSoapOut">
+        <part element="ns:storePresRateInqRes" name="parameters"/>
+    </message>
+
+    <!--  - - - - - - - - - - -->
+    <!--  port Type messages  -->
+    <!--  - - - - - - - - - - -->
+    <portType name="StorePortType">
+        <operation name="storeInq">
+            <input message="tns:storeInqSoapIn"/>
+            <output message="tns:storeInqSoapOut"/>
+            <fault message="tns:EIWSException" name="EIWSException"/>
+        </operation>
+
+        <operation name="storeSearch">
+            <input message="tns:storeSearchSoapIn"/>
+            <output message="tns:storeSearchSoapOut"/>
+            <fault message="tns:EIWSException" name="EIWSException"/>
+        </operation>
+
+        <operation name="storeOperRatesSearch">
+            <input message="tns:storeOperRatesSeachSoapIn"/>
+            <output message="tns:storeOperRatesSeachSoapOut"/>
+            <fault message="tns:EIWSException" name="EIWSException"/>
+        </operation>
+
+        <operation name="storePerfSearch">
+            <input message="tns:storePerfSearchSoapIn"/>
+            <output message="tns:storePerfSearchSoapOut"/>
+            <fault message="tns:EIWSException" name="EIWSException"/>
+        </operation>
+
+        <operation name="storePresRateInq">
+            <input message="tns:storePresRateInqSoapIn"/>
+            <output message="tns:storePresRateInqSoapOut"/>
+            <fault message="tns:EIWSException" name="EIWSException"/>
+        </operation>
+
+    </portType>
+
+     <!--  - - - - - - - - - - -->
+    <!--      Binding         -->
+    <!--  - - - - - - - - - - -->
+    <binding name="StoreSOAPBinding" type="tns:StorePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="storeInq">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EIWSException">
+                <soap:fault name="EIWSException" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="storeSearch">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EIWSException">
+                <soap:fault name="EIWSException" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="storeOperRatesSearch">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EIWSException">
+                <soap:fault name="EIWSException" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="storePerfSearch">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EIWSException">
+                <soap:fault name="EIWSException" use="literal"/>
+            </fault>
+        </operation>
+
+        <operation name="storePresRateInq">
+            <soap:operation/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="EIWSException">
+                <soap:fault name="EIWSException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+
+    <!--  - - - - - - - - - - -->
+    <!--      Service         -->
+    <!--  - - - - - - - - - - -->
+    <service name="StoreService">
+        <port binding="tns:StoreSOAPBinding" name="StorePortType">
+            <soap:address location="http://localhost:9080/CDBService/services/StorePortType"/>
+        </port>
+    </service>
+
+    <plnk:partnerLinkType name="StoreService">
+        <plnk:role name="StorePortTypeRole" portType="tns:StorePortType"/>
+    </plnk:partnerLinkType>
+
+
+
+</definitions>
